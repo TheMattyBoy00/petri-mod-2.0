@@ -1,7 +1,6 @@
 package erikalebenjamattias.petrimod.main;
 
-import erikalebenjamattias.petrimod.init.PetriBlocks;
-import erikalebenjamattias.petrimod.proxy.CommonProxy;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -11,6 +10,11 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import erikalebenjamattias.petrimod.init.PetriBlocks;
+import erikalebenjamattias.petrimod.init.PetriItems;
+import erikalebenjamattias.petrimod.proxy.CommonProxy;
+import erikalebenjamattias.petrimod.worldgen.PetriOreGenerationRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class PetriMod {
@@ -28,13 +32,19 @@ public class PetriMod {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
-		
+        PetriBlocks.init();
+        PetriBlocks.register();
+        PetriItems.init();
+        PetriItems.register();
+        
+        PetriOreGenerationRegistry.main();
 	}
 	
 	@EventHandler
     public void init(FMLInitializationEvent event) {
-        PetriBlocks.init();
-        PetriBlocks.register();
+		proxy.registerRenders();
+		
+		GameRegistry.addSmelting(PetriBlocks.copper_ore, new ItemStack(PetriItems.copper_ingot), 0.75F);
     }
 	
 	@EventHandler

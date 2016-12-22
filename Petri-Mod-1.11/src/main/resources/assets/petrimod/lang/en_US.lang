@@ -1,0 +1,4 @@
+tile.copper_ore.name=Copper Ore
+tile.copper_block.name=Block of Copper
+item.copper_ingot.name=Copper Ingot
+itemGroup.tabPetri=Petri Mod
