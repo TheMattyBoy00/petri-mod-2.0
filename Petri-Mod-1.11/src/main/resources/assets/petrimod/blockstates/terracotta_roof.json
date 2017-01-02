@@ -1,0 +1,53 @@
+{
+    "variants": {
+        "facing=north,is_half=false,shape=straight": {"model": "petrimod:terracotta_roof"},
+        "facing=east,is_half=false,shape=straight": {"model": "petrimod:terracotta_roof", "y": 90},
+        "facing=south,is_half=false,shape=straight": {"model": "petrimod:terracotta_roof", "y": 180},
+        "facing=west,is_half=false,shape=straight": {"model": "petrimod:terracotta_roof", "y": 270},
+		
+        "facing=north,is_half=true,shape=straight": {"model": "petrimod:terracotta_roof_half"},
+        "facing=east,is_half=true,shape=straight": {"model": "petrimod:terracotta_roof_half", "y": 90},
+        "facing=south,is_half=true,shape=straight": {"model": "petrimod:terracotta_roof_half", "y": 180},
+        "facing=west,is_half=true,shape=straight": {"model": "petrimod:terracotta_roof_half", "y": 270},
+		
+        "facing=north,is_half=false,shape=inner_left": {"model": "petrimod:terracotta_roof"},
+        "facing=east,is_half=false,shape=inner_left": {"model": "petrimod:terracotta_roof", "y": 90},
+        "facing=south,is_half=false,shape=inner_left": {"model": "petrimod:terracotta_roof", "y": 180},
+        "facing=west,is_half=false,shape=inner_left": {"model": "petrimod:terracotta_roof", "y": 270},
+		
+        "facing=north,is_half=true,shape=inner_left": {"model": "petrimod:terracotta_roof_half_inner_left"},
+        "facing=east,is_half=true,shape=inner_left": {"model": "petrimod:terracotta_roof_half_inner_left", "y": 90},
+        "facing=south,is_half=true,shape=inner_left": {"model": "petrimod:terracotta_roof_half_inner_left", "y": 180},
+        "facing=west,is_half=true,shape=inner_left": {"model": "petrimod:terracotta_roof_half_inner_left", "y": 270},
+		
+        "facing=north,is_half=false,shape=inner_right": {"model": "petrimod:terracotta_roof"},
+        "facing=east,is_half=false,shape=inner_right": {"model": "petrimod:terracotta_roof", "y": 90},
+        "facing=south,is_half=false,shape=inner_right": {"model": "petrimod:terracotta_roof", "y": 180},
+        "facing=west,is_half=false,shape=inner_right": {"model": "petrimod:terracotta_roof", "y": 270},
+		
+        "facing=north,is_half=true,shape=inner_right": {"model": "petrimod:terracotta_roof_half_inner_right"},
+        "facing=east,is_half=true,shape=inner_right": {"model": "petrimod:terracotta_roof_half_inner_right", "y": 90},
+        "facing=south,is_half=true,shape=inner_right": {"model": "petrimod:terracotta_roof_half_inner_right", "y": 180},
+        "facing=west,is_half=true,shape=inner_right": {"model": "petrimod:terracotta_roof_half_inner_right", "y": 270},
+		
+        "facing=north,is_half=false,shape=outer_left": {"model": "petrimod:terracotta_roof"},
+        "facing=east,is_half=false,shape=outer_left": {"model": "petrimod:terracotta_roof", "y": 90},
+        "facing=south,is_half=false,shape=outer_left": {"model": "petrimod:terracotta_roof", "y": 180},
+        "facing=west,is_half=false,shape=outer_left": {"model": "petrimod:terracotta_roof", "y": 270},
+		
+        "facing=north,is_half=true,shape=outer_left": {"model": "petrimod:terracotta_roof_half_outer_left"},
+        "facing=east,is_half=true,shape=outer_left": {"model": "petrimod:terracotta_roof_half_outer_left", "y": 90},
+        "facing=south,is_half=true,shape=outer_left": {"model": "petrimod:terracotta_roof_half_outer_left", "y": 180},
+        "facing=west,is_half=true,shape=outer_left": {"model": "petrimod:terracotta_roof_half_outer_left", "y": 270},
+		
+        "facing=north,is_half=false,shape=outer_right": {"model": "petrimod:terracotta_roof"},
+        "facing=east,is_half=false,shape=outer_right": {"model": "petrimod:terracotta_roof", "y": 90},
+        "facing=south,is_half=false,shape=outer_right": {"model": "petrimod:terracotta_roof", "y": 180},
+        "facing=west,is_half=false,shape=outer_right": {"model": "petrimod:terracotta_roof", "y": 270},
+		
+        "facing=north,is_half=true,shape=outer_right": {"model": "petrimod:terracotta_roof_half_outer_right"},
+        "facing=east,is_half=true,shape=outer_right": {"model": "petrimod:terracotta_roof_half_outer_right", "y": 90},
+        "facing=south,is_half=true,shape=outer_right": {"model": "petrimod:terracotta_roof_half_outer_right", "y": 180},
+        "facing=west,is_half=true,shape=outer_right": {"model": "petrimod:terracotta_roof_half_outer_right", "y": 270}
+    }
+}

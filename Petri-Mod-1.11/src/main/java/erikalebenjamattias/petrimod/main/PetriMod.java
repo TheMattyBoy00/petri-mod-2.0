@@ -1,5 +1,6 @@
 package erikalebenjamattias.petrimod.main;
 
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -44,7 +45,13 @@ public class PetriMod {
     public void init(FMLInitializationEvent event) {
 		proxy.registerRenders();
 		
+		GameRegistry.addShapedRecipe(new ItemStack(PetriBlocks.copper_block), "iii", "iii", "iii", 'i', PetriItems.copper_ingot);
+		GameRegistry.addShapedRecipe(new ItemStack(PetriItems.copper_ingot, 9), "b", 'b', PetriBlocks.copper_block);
+		GameRegistry.addShapedRecipe(new ItemStack(PetriItems.terracotta_mass, 8), "ccc", "cnc", "ccc", 'c', Items.CLAY_BALL, 'n', Items.field_191525_da);
+		GameRegistry.addShapedRecipe(new ItemStack(PetriBlocks.terracotta_roof), "tt", "tt", 't', PetriItems.terracotta);
+		
 		GameRegistry.addSmelting(PetriBlocks.copper_ore, new ItemStack(PetriItems.copper_ingot), 0.75F);
+		GameRegistry.addSmelting(PetriItems.terracotta_mass, new ItemStack(PetriItems.terracotta), 0.35F);
     }
 	
 	@EventHandler
