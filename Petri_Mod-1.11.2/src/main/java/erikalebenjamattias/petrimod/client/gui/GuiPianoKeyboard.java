@@ -7,7 +7,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import javax.sound.midi.MidiMessage;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.util.ResourceLocation;
@@ -20,6 +19,8 @@ import erikalebenjamattias.petrimod.entity.inanimate.EntityGrandPiano;
 import erikalebenjamattias.petrimod.init.PetriSounds;
 import erikalebenjamattias.petrimod.main.Reference;
 import erikalebenjamattias.petrimod.network.NotifyServerOfPianoPlayMessages;
+import erikalebenjamattias.petrimod.network.NotifyServerOfPianoResetMessages;
+import erikalebenjamattias.petrimod.network.NotifyServerOfPianoStopMessages;
 import erikalebenjamattias.petrimod.network.PetriPacketHandler;
 import erikalebenjamattias.petrimod.util.MidiHandler;
 
@@ -122,7 +123,7 @@ public class GuiPianoKeyboard extends GuiScreen {
 	};
 	private List<Integer> keysThatAreDown = new ArrayList<Integer>();
 	private boolean pedal;
-	private List<PianoSound> lingeringSounds = new ArrayList<PianoSound>();
+	public static List<PianoSound> lingeringSounds = new ArrayList<PianoSound>();
 	private MidiHandler midiHandler = new MidiHandler(this);
 	private int midiIndex;
 	public List<MidiMessage> midiMessage = new CopyOnWriteArrayList<MidiMessage>();
@@ -321,7 +322,7 @@ public class GuiPianoKeyboard extends GuiScreen {
 					//if(!this.pianoSound[i].isLoaded() && !this.mc.getSoundHandler().isSoundPlaying(this.pianoSound[i])) {
 					if(!this.keysThatAreDown.contains(Integer.valueOf(i))) {
 						this.mc.getSoundHandler().playSound(this.pianoSound[i].setEntity(this.piano)/*.setLoaded(true)*/);
-						PetriPacketHandler.INSTANCE.sendToServer(new NotifyServerOfPianoPlayMessages.NotifyServerOfPianoPlayMessage(i, 2.0F, this.piano.getEntityId(), Minecraft.getMinecraft().player.getEntityId()));
+						PetriPacketHandler.INSTANCE.sendToServer(new NotifyServerOfPianoPlayMessages.NotifyServerOfPianoPlayMessage(i, 2.0F, this.piano.getEntityId()/*, Minecraft.getMinecraft().player.getEntityId()*/));
 						this.keysThatAreDown.add(Integer.valueOf(i));
 					}
 					//}
@@ -342,15 +343,17 @@ public class GuiPianoKeyboard extends GuiScreen {
 							this.lingeringSounds.add(this.pianoSound[i]);
 						}
 						this.pianoSound[i] = new PianoSound(this.pianoSound[i]/*.getSoundEvent(), this.pianoSound[i].getPitch()*/);
+						PetriPacketHandler.INSTANCE.sendToServer(new NotifyServerOfPianoResetMessages.NotifyServerOfPianoResetMessage(i, this.piano.getEntityId()));
 					}
 				}
 			}
 		}
 		this.pedal = Keyboard.isKeyDown(this.mc.gameSettings.keyBindJump.getKeyCode());
 		if(!pedal) {
-			for(int i = 0; i < this.lingeringSounds.size(); i++) {
+			for(byte i = 0; i < this.lingeringSounds.size(); i++) {
 				this.lingeringSounds.get(i).stopPlaying();
 				this.lingeringSounds.remove(i);
+				PetriPacketHandler.INSTANCE.sendToServer(new NotifyServerOfPianoStopMessages.NotifyServerOfPianoStopMessage(i, this.piano.getEntityId()));
 			}
 		}
 		/*for(MidiMessage midiMessage : this.midiMessage) {
@@ -374,6 +377,7 @@ public class GuiPianoKeyboard extends GuiScreen {
 				this.keysDown[MathHelper.clamp(message.getMessage()[1] - 20, 1, 88)] = true;
 				if(!this.keysThatAreDown.contains(Integer.valueOf(MathHelper.clamp(message.getMessage()[1] - 20, 1, 88)))) {
 					this.mc.getSoundHandler().playSound(this.pianoSound[MathHelper.clamp(message.getMessage()[1] - 20, 1, 88)].setEntity(this.piano).setVolume(message.getMessage()[2] / 63.5F));
+					PetriPacketHandler.INSTANCE.sendToServer(new NotifyServerOfPianoPlayMessages.NotifyServerOfPianoPlayMessage((byte)MathHelper.clamp(message.getMessage()[1] - 20, 1, 88), 2.0F, this.piano.getEntityId()));
 					this.keysThatAreDown.add(Integer.valueOf(MathHelper.clamp(message.getMessage()[1] - 20, 1, 88)));
 				}
 			}

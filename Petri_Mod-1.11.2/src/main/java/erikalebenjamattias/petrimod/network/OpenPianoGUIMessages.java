@@ -9,6 +9,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.MessageContext;
 import net.minecraftforge.fml.relauncher.Side;
 import erikalebenjamattias.petrimod.client.gui.GuiPianoKeyboard;
 import erikalebenjamattias.petrimod.entity.inanimate.EntityGrandPiano;
+import erikalebenjamattias.petrimod.main.PetriMod;
 
 public class OpenPianoGUIMessages {
 
@@ -39,7 +40,7 @@ public class OpenPianoGUIMessages {
 		
 		@Override
 		public IMessage onMessage(OpenPianoGUIMessage message, MessageContext ctx) {
-			if(ctx.side == Side.CLIENT) {
+			/*if(ctx.side == Side.CLIENT) {
 				Minecraft.getMinecraft().addScheduledTask(() -> {
 					World world = Minecraft.getMinecraft().world;
 					/*World world = ctx.getServerHandler().playerEntity.world;
@@ -47,11 +48,12 @@ public class OpenPianoGUIMessages {
 						EntityPlayer player = (EntityPlayer)world.getEntityByID(message.playerId);
 					}*/
 					//System.out.println("Hai");
-					if(world.getEntityByID(message.pianoId) instanceof EntityGrandPiano) {
+					/*if(world.getEntityByID(message.pianoId) instanceof EntityGrandPiano) {
 						Minecraft.getMinecraft().displayGuiScreen(new GuiPianoKeyboard((EntityGrandPiano)world.getEntityByID(message.pianoId)));
 					}
 				});
-			}
+			}*/
+			PetriMod.proxy.clientPacketPianoGUI(message.pianoId);
 			return null;
 		}		
 	}

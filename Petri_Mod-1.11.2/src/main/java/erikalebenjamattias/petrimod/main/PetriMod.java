@@ -41,6 +41,7 @@ public class PetriMod {
         PetriItems.init();
         PetriItems.register();
         PetriSounds.init();
+		PetriPacketHandler.init();
         
         PetriOreGenerationRegistry.main();
         
