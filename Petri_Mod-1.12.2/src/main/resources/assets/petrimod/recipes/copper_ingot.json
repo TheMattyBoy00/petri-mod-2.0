@@ -1,0 +1,17 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"B"
+	],
+	"key": {
+		"B": {
+			"item": "petrimod:copper_block",
+			"data": 0
+		}
+	},
+	"result": {
+		"item": "petrimod:copper_ingot",
+		"data": 0,
+		"count": 9
+	}
+}

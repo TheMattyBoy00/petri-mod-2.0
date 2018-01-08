@@ -1,0 +1,27 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"psp",
+		"sbs",
+		"psp"
+	],
+	"key": {
+		"p": {
+			"item": "minecraft:glass_pane",
+			"data": 0
+		},
+		"s": {
+			"item": "minecraft:stick",
+			"data": 0
+		},
+        "b": {
+            "item": "minecraft:dye",
+            "data": 15
+        }
+	},
+	"result": {
+		"item": "petrimod:petri_window",
+		"data": 0,
+		"count": 4
+	}
+}

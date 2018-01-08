@@ -1,0 +1,23 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"ccc",
+		"csc",
+		"ccc"
+	],
+	"key": {
+		"c": {
+			"item": "minecraft:clay_ball",
+			"data": 0
+		},
+		"s": {
+			"item": "minecraft:sand",
+			"data": 0
+		}
+	},
+	"result": {
+		"item": "petrimod:sanded_clay",
+		"data": 0,
+		"count": 8
+	}
+}

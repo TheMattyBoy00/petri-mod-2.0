@@ -1,0 +1,25 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "petrimod:petri_bricks"
+    ]
+  },
+  "criteria": {
+    "has_brick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "petrimod:sanded_brick"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brick"
+    ]
+  ]
+}

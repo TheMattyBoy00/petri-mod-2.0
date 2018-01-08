@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"c  ",
+		"cc ",
+		"ccc"
+	],
+	"key": {
+		"c": {
+			"item": "petrimod:corroded_copper_block",
+			"data": 0
+		}
+	},
+	"result": {
+		"item": "petrimod:corroded_copper_roof",
+		"data": 0,
+		"count": 4
+	}
+}

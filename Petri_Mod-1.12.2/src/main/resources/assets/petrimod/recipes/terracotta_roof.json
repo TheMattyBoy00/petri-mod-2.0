@@ -1,0 +1,18 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"tt",
+		"tt"
+	],
+	"key": {
+		"t": {
+			"item": "petrimod:terracotta",
+			"data": 0
+		}
+	},
+	"result": {
+		"item": "petrimod:terracotta_roof",
+		"data": 0,
+		"count": 1
+	}
+}

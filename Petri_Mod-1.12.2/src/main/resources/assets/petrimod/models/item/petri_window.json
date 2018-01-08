@@ -1,0 +1,7 @@
+{
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "petrimod:blocks/petri_window_pane",
+        "layer1": "petrimod:blocks/petri_window_frame"
+    }
+}

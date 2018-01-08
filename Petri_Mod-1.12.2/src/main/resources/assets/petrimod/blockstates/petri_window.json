@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "petrimod:petri_window" },
+        "facing=south": { "model": "petrimod:petri_window", "y": 180 },
+        "facing=west":  { "model": "petrimod:petri_window", "y": 270 },
+        "facing=east":  { "model": "petrimod:petri_window", "y": 90 }
+    }
+}

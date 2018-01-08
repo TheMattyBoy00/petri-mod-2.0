@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "petrimod:whiteboard" },
+        "facing=south": { "model": "petrimod:whiteboard" },
+        "facing=west":  { "model": "petrimod:whiteboard" },
+        "facing=east":  { "model": "petrimod:whiteboard" }
+    }
+}

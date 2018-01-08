@@ -1,0 +1,29 @@
+itemGroup.tabPetri=Petri Mod
+
+tile.copper_ore.name=Copper Ore
+tile.copper_block.name=Block of Copper
+tile.terracotta_roof.name=Terracotta Roof
+tile.petri_bricks.name=Petri Bricks
+tile.corroded_copper_block.name=Corroded Block of Copper
+tile.corroded_copper_roof.name=Corroded Copper Roof
+tile.petri_window.name=Petri Window Pane
+tile.uncolored_concrete_powder.name=Concrete Powder
+tile.uncolored_concrete.name=Concrete
+tile.whiteboard.name=Whiteboard
+
+item.copper_ingot.name=Copper Ingot
+item.terracotta_mass.name=Terracotta Mass
+item.terracotta.name=Terracotta Slate
+item.sanded_clay.name=Sanded Clay
+item.sanded_brick.name=Sanded Brick
+item.front_clock.name=Front Clock
+item.whiteboard_marker_black.name=Black Whiteboard Marker
+item.whiteboard_marker_red.name=Red Whiteboard Marker
+item.whiteboard_marker_green.name=Green Whiteboard Marker
+item.whiteboard_marker_blue.name=Blue Whiteboard Marker
+
+entity.Mehmet.name=Mehmet
+entity.GrandPiano.name=Grand Piano
+entity.FrontClock.name=Front Clock
+
+gui.piano.midi=MIDI Input: 1%s

@@ -1,0 +1,42 @@
+{
+	"type": "minecraft:crafting_shapeless",
+	"ingredients": [
+		{
+		  "item": "minecraft:sand",
+          "data": 0
+		},
+        {
+          "item": "minecraft:sand",
+          "data": 0
+        },
+        {
+          "item": "minecraft:sand",
+          "data": 0
+        },
+        {
+          "item": "minecraft:sand",
+          "data": 0
+        },
+        {
+          "item": "minecraft:sand",
+          "data": 0
+        },
+        {
+          "item": "minecraft:gravel"
+        },
+        {
+          "item": "minecraft:gravel"
+        },
+        {
+          "item": "minecraft:gravel"
+        },
+        {
+          "item": "minecraft:gravel"
+        }
+	],
+	"result": {
+		"item": "petrimod:uncolored_concrete_powder",
+		"data": 0,
+		"count": 9
+	}
+}

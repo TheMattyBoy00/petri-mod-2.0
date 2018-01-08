@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "petrimod:blocks/corroded_copper_block"
+    }
+}
